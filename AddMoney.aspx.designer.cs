@@ -14,6 +14,8 @@ namespace OnlineBankingTransactionSystem
     public partial class AddMoney
     {
 
+        protected global::System.Web.UI.WebControls.DropDownList ddlBanks;
+
         /// <summary>
         /// txtAmount control.
         /// </summary>

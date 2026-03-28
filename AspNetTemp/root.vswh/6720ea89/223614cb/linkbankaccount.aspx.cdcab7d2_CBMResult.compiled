@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="7" virtualPath="/LinkBankAccount.aspx" hash="ffffffff9d31184e" filehash="f40cdf0a6" flags="100000" CCUpreservationFileName="linkbankaccount.aspx.cdcab7d2_CBMResult.ccu">
+    <filedeps>
+        <filedep name="/LinkBankAccount.aspx" />
+        <filedep name="/Main.Master" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/AdminTransactions.aspx" hash="ffffffff9d31184e" filehash="2138617a800a" flags="110000" assembly="App_Web_5rvktkqy" type="ASP.admintransactions_aspx">
+    <filedeps>
+        <filedep name="/AdminTransactions.aspx" />
+    </filedeps>
+</preserve>

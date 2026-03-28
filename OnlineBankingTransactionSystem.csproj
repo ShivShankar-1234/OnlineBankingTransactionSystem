@@ -144,7 +144,11 @@
     <Content Include="About.aspx" />
     <Content Include="AddMoney.aspx" />
     <Content Include="AdminDashboard.aspx" />
+    <Content Include="AdminLinkedAccounts.aspx" />
     <Content Include="AdminKYC.aspx" />
+    <Content Include="AdminTransactions.aspx" />
+    <Content Include="AdminUsers.aspx" />
+    <Content Include="FixedDeposit.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="BillPayment.aspx" />
     <Content Include="Contact.aspx" />
@@ -229,6 +233,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="AddBeneficiary.aspx" />
     <Content Include="ManageBeneficiaries.aspx" />
+    <Content Include="LinkBankAccount.aspx" />
     <Content Include="Main.Master" />
     <Content Include="MyQR.aspx" />
     <Content Include="SendMoney.aspx" />
@@ -262,12 +267,40 @@
     <Compile Include="AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminTransactions.aspx.cs">
+      <DependentUpon>AdminTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminTransactions.aspx.designer.cs">
+      <DependentUpon>AdminTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsers.aspx.designer.cs">
+      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLinkedAccounts.aspx.cs">
+      <DependentUpon>AdminLinkedAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLinkedAccounts.aspx.designer.cs">
+      <DependentUpon>AdminLinkedAccounts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminKYC.aspx.cs">
       <DependentUpon>AdminKYC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminKYC.aspx.designer.cs">
       <DependentUpon>AdminKYC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FixedDeposit.aspx.cs">
+      <DependentUpon>FixedDeposit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FixedDeposit.aspx.designer.cs">
+      <DependentUpon>FixedDeposit.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
@@ -340,6 +373,13 @@
     <Compile Include="ManageBeneficiaries.aspx.designer.cs">
       <DependentUpon>ManageBeneficiaries.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LinkBankAccount.aspx.cs">
+      <DependentUpon>LinkBankAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkBankAccount.aspx.designer.cs">
+      <DependentUpon>LinkBankAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,6 +387,7 @@
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="SecurityHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyQR.aspx.cs">
       <DependentUpon>MyQR.aspx</DependentUpon>

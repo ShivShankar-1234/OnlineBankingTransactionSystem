@@ -19,12 +19,8 @@ namespace OnlineBankingTransactionSystem
                 return;
             }
 
-            // Check if table exists, if not redirect to setup
-            if (!DatabaseSetupHelper.CheckIfTableExists())
-            {
-                Response.Redirect("SetupDatabase.aspx");
-                return;
-            }
+            // Table check removed to prevent redirect loop.
+            // If table is missing, LoadBeneficiaries() will handle the error gracefully.
 
             if (!IsPostBack)
             {

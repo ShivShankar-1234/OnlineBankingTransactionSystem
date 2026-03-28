@@ -234,9 +234,17 @@
                         <iconify-icon icon="lucide:users" style="font-size: 20px"></iconify-icon>
                         Beneficiaries
                     </a>
+                    <a href="LinkBankAccount.aspx" class="nav-item" id="navLinkBank" runat="server">
+                        <iconify-icon icon="lucide:building-2" style="font-size: 20px"></iconify-icon>
+                        Link Bank Account
+                    </a>
                     <a href="KYC_New.aspx" class="nav-item" id="navKYC" runat="server">
                         <iconify-icon icon="lucide:shield-check" style="font-size: 20px"></iconify-icon>
                         KYC Verification
+                    </a>
+                    <a href="FixedDeposit.aspx" class="nav-item" id="navFD" runat="server">
+                        <iconify-icon icon="lucide:piggy-bank" style="font-size: 20px"></iconify-icon>
+                        Fixed Deposits
                     </a>
                 </nav>
             </aside>

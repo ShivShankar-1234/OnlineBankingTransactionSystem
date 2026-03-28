@@ -69,13 +69,20 @@
     <body>
         <form runat="server">
             <div class="container">
-                <h1>Database Setup - Beneficiaries Module</h1>
-                <p>Click the button below to create the Beneficiaries table in your database.</p>
+                <h1>Database Setup & Repair</h1>
+                <p>Click the button below to Create Missing Tables and Fix Schema Issues.</p>
 
-                <asp:Button ID="btnSetup" runat="server" Text="Create Beneficiaries Table" CssClass="btn"
+                <asp:Button ID="btnSetup" runat="server" Text="Run Database Setup & Update Schema" CssClass="btn"
                     OnClick="btnSetup_Click" />
 
                 <asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label>
+
+                <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+                    <a href="Dashboard.aspx"
+                        style="text-decoration: none; color: #007bff; font-weight: bold; margin-right: 15px;">Go to
+                        Dashboard</a>
+                    <a href="Login.aspx" style="text-decoration: none; color: #555;">Go to Login</a>
+                </div>
             </div>
         </form>
     </body>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/AdminDashboard.aspx" hash="ffffffff9d31184e" filehash="33abc5303692" flags="110000" assembly="App_Web_uzu43rtn" type="ASP.admindashboard_aspx">
+    <filedeps>
+        <filedep name="/AdminDashboard.aspx" />
+    </filedeps>
+</preserve>

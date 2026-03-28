@@ -8,7 +8,7 @@ namespace OnlineBankingTransactionSystem
 {
     public partial class AdminDashboard : System.Web.UI.Page
     {
-        string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+        readonly string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -130,7 +130,7 @@ namespace OnlineBankingTransactionSystem
             }
         }
 
-        protected void btnLogout_Click(object sender, EventArgs e)
+        protected void BtnLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("Login.aspx");

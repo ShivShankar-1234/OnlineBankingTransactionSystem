@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/BillPayment.aspx" hash="ffffffff9d31184e" filehash="de05a78d2e47c6ae" flags="110000" assembly="App_Web_ekyrdmmo" type="ASP.billpayment_aspx">
+    <filedeps>
+        <filedep name="/BillPayment.aspx" />
+        <filedep name="/Main.Master" />
+    </filedeps>
+</preserve>

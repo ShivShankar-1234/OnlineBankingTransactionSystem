@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Site.Master" hash="ffffffff9d31184e" filehash="4396382aaf9a" flags="110000" assembly="App_Web_no5tvzbr" type="ASP.site_master">
+    <filedeps>
+        <filedep name="/Site.Master" />
+    </filedeps>
+</preserve>

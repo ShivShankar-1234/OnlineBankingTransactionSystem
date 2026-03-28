@@ -18,12 +18,7 @@ namespace OnlineBankingTransactionSystem
                 return;
             }
 
-            // Check if table exists
-            if (!DatabaseSetupHelper.CheckIfTableExists())
-            {
-                Response.Redirect("SetupDatabase.aspx");
-                return;
-            }
+            // Table check removed to prevent redirect loop.
 
             // Store verified ID in ViewState
             if (ViewState["VerifiedBeneficiaryUserID"] != null)

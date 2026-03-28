@@ -409,6 +409,19 @@
                                     <button type="button" class="amount-btn" onclick="setAmount(5000)">₹5,000</button>
                                 </div>
 
+                                <!-- Bank Selection -->
+                                <div class="form-group">
+                                    <label class="form-label">Select Bank Account</label>
+                                    <asp:DropDownList ID="ddlBanks" runat="server" CssClass="form-input">
+                                    </asp:DropDownList>
+                                    <div style="margin-top: 8px;">
+                                        <a href="LinkBankAccount.aspx"
+                                            style="color: #4f46e5; text-decoration: none; font-size: 14px; font-weight: 500;">
+                                            + Link New Bank Account
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <!-- Amount Input -->
                                 <div class="form-group">
                                     <label class="form-label">Enter Amount</label>
@@ -418,7 +431,7 @@
 
                                 <!-- Submit Button -->
                                 <asp:Button ID="btnAdd" runat="server" Text="Add Money" CssClass="btn-primary"
-                                    OnClick="btnAdd_Click" />
+                                    OnClick="AddButton_Click" />
                             </div>
                         </div>
                     </div>

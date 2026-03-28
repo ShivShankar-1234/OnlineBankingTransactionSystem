@@ -7,40 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineBankingTransactionSystem
-{
-
-
-    public partial class Dashboard
-    {
-
+namespace OnlineBankingTransactionSystem {
+    
+    
+    public partial class Dashboard {
+        
         /// <summary>
-        /// lblNotifyCount control.
+        /// lblAccountNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotifyCount;
-
+        protected global::System.Web.UI.WebControls.Label lblAccountNumber;
+        
         /// <summary>
-        /// btnLogout control.
+        /// lblIFSC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
-
-        /// <summary>
-        /// rptNotify control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptNotify;
-
+        protected global::System.Web.UI.WebControls.Label lblIFSC;
+        
         /// <summary>
         /// lblBalance control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace OnlineBankingTransactionSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBalance;
-
+        
         /// <summary>
         /// lblKYC control.
         /// </summary>
@@ -58,7 +47,43 @@ namespace OnlineBankingTransactionSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblKYC;
-
+        
+        /// <summary>
+        /// btnAddMoney control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddMoney;
+        
+        /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogout;
+        
+        /// <summary>
+        /// lblNotifyCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotifyCount;
+        
+        /// <summary>
+        /// rptNotify control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptNotify;
+        
         /// <summary>
         /// gvMiniStatement control.
         /// </summary>

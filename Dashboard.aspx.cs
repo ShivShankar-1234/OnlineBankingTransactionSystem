@@ -7,7 +7,7 @@ namespace OnlineBankingTransactionSystem
 {
     public partial class Dashboard : System.Web.UI.Page
     {
-        string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+        readonly string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,24 +28,41 @@ namespace OnlineBankingTransactionSystem
 
         void LoadBalance()
         {
-            using (MySqlConnection con = new MySqlConnection(cs))
+            try
             {
-                // Balance Users table se hi aayega
-                string query = "SELECT Balance FROM Users WHERE UserID=@id";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@id", Session["UserID"]);
-
-                con.Open();
-                object result = cmd.ExecuteScalar();
-
-                if (result != null && result != DBNull.Value)
+                using (MySqlConnection con = new MySqlConnection(cs))
                 {
-                    lblBalance.Text = "₹ " + Convert.ToDecimal(result).ToString("0.00");
+                    // Fetch Balance, AccountNumber, and IFSC
+                    string query = "SELECT Balance, AccountNumber, IFSC FROM Users WHERE UserID=@id";
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@id", Session["UserID"]);
+
+                    con.Open();
+                    using(MySqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                             // Balance
+                             object bal = rdr["Balance"];
+                             lblBalance.Text = (bal != DBNull.Value) ? "₹ " + Convert.ToDecimal(bal).ToString("0.00") : "₹ 0.00";
+
+                             // Account Info
+                             lblAccountNumber.Text = rdr["AccountNumber"] != DBNull.Value ? rdr["AccountNumber"].ToString() : "N/A";
+                             lblIFSC.Text = rdr["IFSC"] != DBNull.Value ? rdr["IFSC"].ToString() : "N/A";
+                        }
+                    }
                 }
-                else
-                {
-                    lblBalance.Text = "₹ 0.00";
-                }
+            }
+            catch (MySqlException ex)
+            {
+                 if (ex.Message.Contains("Unknown column"))
+                 {
+                     Response.Write("<script>alert('⚠️ Database Update Required! Redirecting to Setup...'); window.location='SetupDatabase.aspx';</script>");
+                 }
+                 else
+                 {
+                     // Log or ignore
+                 }
             }
         }
 
@@ -67,22 +84,22 @@ namespace OnlineBankingTransactionSystem
                 if (status == "VERIFIED")
                 {
                     lblKYC.Text = "✅ VERIFIED";
-                    lblKYC.ForeColor = System.Drawing.Color.LightGreen;
+                    lblKYC.CssClass = "hero-kyc-badge verified";
                 }
                 else if (status == "PENDING")
                 {
                     lblKYC.Text = "⏳ PENDING";
-                    lblKYC.ForeColor = System.Drawing.Color.Orange;
+                    lblKYC.CssClass = "hero-kyc-badge pending";
                 }
                 else if (status == "REJECTED")
                 {
                     lblKYC.Text = "❌ REJECTED";
-                    lblKYC.ForeColor = System.Drawing.Color.Red;
+                    lblKYC.CssClass = "hero-kyc-badge pending";  /* amber style */
                 }
                 else
                 {
-                    lblKYC.Text = "❌ NOT SUBMITTED";
-                    lblKYC.ForeColor = System.Drawing.Color.Gray;
+                    lblKYC.Text = "⚠ NOT SUBMITTED";
+                    lblKYC.CssClass = "hero-kyc-badge pending";
                 }
             }
         }
@@ -108,12 +125,12 @@ namespace OnlineBankingTransactionSystem
             }
         }
 
-        protected void btnAddMoney_Click(object sender, EventArgs e)
+        protected void BtnAddMoney_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddMoney.aspx");
         }
 
-        protected void btnLogout_Click(object sender, EventArgs e)
+        protected void BtnLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("Login.aspx");

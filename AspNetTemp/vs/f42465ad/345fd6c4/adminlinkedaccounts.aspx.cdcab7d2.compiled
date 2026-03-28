@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/AdminLinkedAccounts.aspx" hash="ffffffff9d31184e" filehash="1287925269c9" flags="110000" assembly="App_Web_uzu43rtn" type="ASP.adminlinkedaccounts_aspx">
+    <filedeps>
+        <filedep name="/AdminLinkedAccounts.aspx" />
+    </filedeps>
+</preserve>

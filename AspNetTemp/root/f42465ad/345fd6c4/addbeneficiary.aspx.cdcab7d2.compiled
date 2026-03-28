@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/AddBeneficiary.aspx" hash="ffffffff9d31184e" filehash="ffffc33210777e59" flags="110000" assembly="App_Web_wnufj5dx" type="ASP.addbeneficiary_aspx">
+    <filedeps>
+        <filedep name="/AddBeneficiary.aspx" />
+    </filedeps>
+</preserve>

@@ -32,6 +32,9 @@ namespace OnlineBankingTransactionSystem
                 case "addbeneficiary.aspx":
                     navBeneficiaries.Attributes["class"] = "nav-item active";
                     break;
+                case "linkbankaccount.aspx":
+                    navLinkBank.Attributes["class"] = "nav-item active";
+                    break;
                 case "kyc_new.aspx":
                     navKYC.Attributes["class"] = "nav-item active";
                     break;

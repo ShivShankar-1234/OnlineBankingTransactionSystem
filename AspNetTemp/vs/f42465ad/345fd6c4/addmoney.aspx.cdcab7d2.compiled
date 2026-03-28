@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/AddMoney.aspx" hash="ffffffff9d31184e" filehash="ffffc51f63feefb8" flags="110000" assembly="App_Web_uzu43rtn" type="ASP.addmoney_aspx">
+    <filedeps>
+        <filedep name="/AddMoney.aspx" />
+    </filedeps>
+</preserve>

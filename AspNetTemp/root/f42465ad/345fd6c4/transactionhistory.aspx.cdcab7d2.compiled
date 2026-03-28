@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/TransactionHistory.aspx" hash="ffffffff9d31184e" filehash="74a99d556c8c8c9a" flags="110000" assembly="App_Web_ekyrdmmo" type="ASP.transactionhistory_aspx">
+    <filedeps>
+        <filedep name="/Main.Master" />
+        <filedep name="/TransactionHistory.aspx" />
+    </filedeps>
+</preserve>

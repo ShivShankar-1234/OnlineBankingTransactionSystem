@@ -480,6 +480,167 @@
                 color: var(--muted-foreground);
             }
 
+            /* ── Hero Balance Card ─────────────────────────────────── */
+            .hero-card {
+                background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 60%, #0ea5e9 100%);
+                border-radius: 20px;
+                padding: 36px 40px;
+                color: white;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(79, 70, 229, .35);
+                margin-bottom: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+            }
+
+            .hero-card::before {
+                content: '';
+                position: absolute;
+                top: -60px;
+                right: -60px;
+                width: 260px;
+                height: 260px;
+                background: rgba(255, 255, 255, .08);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            .hero-card::after {
+                content: '';
+                position: absolute;
+                bottom: -80px;
+                left: 30px;
+                width: 200px;
+                height: 200px;
+                background: rgba(255, 255, 255, .05);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            .hero-left {
+                flex: 1;
+                z-index: 1;
+            }
+
+            .hero-greeting {
+                font-size: 13px;
+                font-weight: 500;
+                opacity: .75;
+                letter-spacing: .04em;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            .hero-balance-label {
+                font-size: 14px;
+                font-weight: 500;
+                opacity: .85;
+                margin-bottom: 6px;
+            }
+
+            .hero-balance {
+                font-size: 52px;
+                font-weight: 800;
+                line-height: 1;
+                letter-spacing: -2px;
+                margin-bottom: 20px;
+            }
+
+            .hero-chips {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .hero-chip {
+                background: rgba(255, 255, 255, .15);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, .2);
+                border-radius: 100px;
+                padding: 5px 14px;
+                font-size: 12px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                letter-spacing: .01em;
+            }
+
+            .hero-right {
+                z-index: 1;
+                text-align: right;
+            }
+
+            .hero-kyc-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 18px;
+                border-radius: 100px;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: .02em;
+            }
+
+            .hero-kyc-badge.verified {
+                background: rgba(16, 185, 129, .25);
+                border: 1.5px solid rgba(16, 185, 129, .5);
+                color: #6ee7b7;
+            }
+
+            .hero-kyc-badge.pending {
+                background: rgba(245, 158, 11, .2);
+                border: 1.5px solid rgba(245, 158, 11, .45);
+                color: #fcd34d;
+            }
+
+            .hero-card-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, .12);
+                border: 1.5px solid rgba(255, 255, 255, .2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 12px;
+                margin-left: auto;
+            }
+
+            /* top-bar user greeting */
+            .user-greeting {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .user-greeting .hello {
+                font-size: 12px;
+                color: var(--muted-foreground);
+            }
+
+            .user-greeting .uname {
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--foreground);
+            }
+
+            .avatar {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #4f46e5, #7c3aed);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: 700;
+            }
+
             /* Responsive */
             @media (max-width: 768px) {
                 .sidebar {
@@ -493,8 +654,13 @@
                     left: 0;
                 }
 
-                .balance-amount {
+                .hero-balance {
                     font-size: 36px;
+                }
+
+                .hero-card {
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
 
                 .actions-grid {
@@ -575,12 +741,15 @@
                 <main class="main-content">
                     <!-- Header -->
                     <header class="top-bar">
-                        <div class="page-title">Dashboard Overview</div>
+                        <div class="user-greeting">
+                            <span class="hello">Welcome back 👋</span>
+                            <span class="uname">My Dashboard</span>
+                        </div>
                         <div class="top-actions">
+                            <!-- Notification Bell -->
                             <div class="icon-btn" onclick="toggleNotify()" style="position: relative;">
                                 <iconify-icon icon="lucide:bell" style="font-size: 20px"></iconify-icon>
                                 <asp:Label ID="lblNotifyCount" runat="server" CssClass="badge"></asp:Label>
-
                                 <!-- Notifications Dropdown -->
                                 <div id="notifyBox" class="notify-box">
                                     <h6>Notifications</h6>
@@ -602,28 +771,48 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Avatar -->
+                            <div class="avatar">U</div>
+                            <!-- Logout -->
                             <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="logout-btn"
-                                OnClick="btnLogout_Click" />
+                                OnClick="BtnLogout_Click" />
                         </div>
                     </header>
 
                     <!-- Body -->
                     <div class="dashboard-scroll">
                         <div class="dashboard-container">
-                            <!-- Balance Card -->
-                            <section class="balance-section">
-                                <div class="balance-card">
-                                    <div class="balance-label">Total Balance</div>
-                                    <div class="balance-amount">
-                                        <asp:Label ID="lblBalance" runat="server"></asp:Label>
+                            <!-- ── Hero Balance Card ── -->
+                            <div class="hero-card">
+                                <div class="hero-left">
+                                    <div class="hero-greeting">Wallet Balance</div>
+                                    <div class="hero-balance">
+                                        <asp:Label ID="lblBalance" runat="server" Text="₹ 0.00"></asp:Label>
                                     </div>
-                                    <div class="kyc-badge">
-                                        <iconify-icon icon="lucide:check-circle-2"
-                                            style="font-size: 14px; color: #4ade80"></iconify-icon>
-                                        KYC Status: <asp:Label ID="lblKYC" runat="server"></asp:Label>
+                                    <div class="hero-chips">
+                                        <div class="hero-chip">
+                                            <iconify-icon icon="lucide:credit-card"
+                                                style="font-size:13px"></iconify-icon>
+                                            <asp:Label ID="lblAccountNumber" runat="server" Text="XXXXXXXXXX">
+                                            </asp:Label>
+                                        </div>
+                                        <div class="hero-chip">
+                                            <iconify-icon icon="lucide:building-2"
+                                                style="font-size:13px"></iconify-icon>
+                                            IFSC:&nbsp;<asp:Label ID="lblIFSC" runat="server" Text="OBTS0000001">
+                                            </asp:Label>
+                                        </div>
                                     </div>
                                 </div>
-                            </section>
+                                <div class="hero-right">
+                                    <div class="hero-card-icon">
+                                        <iconify-icon icon="lucide:landmark"
+                                            style="font-size:36px; color:white"></iconify-icon>
+                                    </div>
+                                    <asp:Label ID="lblKYC" runat="server" Text="Pending" Font-Bold="true"
+                                        CssClass="hero-kyc-badge pending"></asp:Label>
+                                </div>
+                            </div>
 
                             <!-- Quick Actions -->
                             <section class="quick-actions">

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/LinkBankAccount.aspx" hash="ffffffff9d31184e" filehash="b02b25a2516f2f8b" flags="110000" assembly="App_Web_3x53by3v" type="ASP.linkbankaccount_aspx">
+    <filedeps>
+        <filedep name="/LinkBankAccount.aspx" />
+        <filedep name="/Main.Master" />
+    </filedeps>
+</preserve>

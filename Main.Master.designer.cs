@@ -54,12 +54,30 @@ namespace OnlineBankingTransactionSystem
         /// <summary>
         /// navBeneficiaries control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor navBeneficiaries;
+
+        /// <summary>
+        /// navLinkBank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navLinkBank;
 
         /// <summary>
         /// navKYC control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor navKYC;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navFD;
 
         /// <summary>
         /// PageTitle control.

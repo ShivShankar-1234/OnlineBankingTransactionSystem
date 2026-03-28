@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/SendMoney.aspx" hash="ffffffff9d31184e" filehash="74a9c928fed919a5" flags="110000" assembly="App_Web_ekyrdmmo" type="ASP.sendmoney_aspx">
+    <filedeps>
+        <filedep name="/Main.Master" />
+        <filedep name="/SendMoney.aspx" />
+    </filedeps>
+</preserve>

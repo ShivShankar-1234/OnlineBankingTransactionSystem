@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/FixedDeposit.aspx" hash="ffffffff9d31184e" filehash="65a1aaad77303722" flags="110000" assembly="App_Web_3x53by3v" type="ASP.fixeddeposit_aspx">
+    <filedeps>
+        <filedep name="/FixedDeposit.aspx" />
+        <filedep name="/Main.Master" />
+    </filedeps>
+</preserve>

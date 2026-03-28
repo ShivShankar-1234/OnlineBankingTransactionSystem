@@ -6,7 +6,7 @@ namespace OnlineBankingTransactionSystem
 {
     public partial class SendMoney : System.Web.UI.Page
     {
-        string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+        readonly string cs = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -147,35 +147,21 @@ namespace OnlineBankingTransactionSystem
                         return;
                     }
 
-                    // 1. Find Receiver
+                    // 1. Find Receiver by Email, Mobile, or Account Number
                     MySqlCommand find = new MySqlCommand(
-                        "SELECT UserID FROM Users WHERE Email=@v OR Mobile=@v OR UPI_ID=@v", con, transaction);
+                        "SELECT UserID FROM Users WHERE Email=@v OR Mobile=@v OR AccountNumber=@v", con, transaction);
                     find.Parameters.AddWithValue("@v", receiverInput);
 
                     object recObj = find.ExecuteScalar();
-                    int receiverId;
 
-                    // 2. Create New User if not exists
                     if (recObj == null)
                     {
-                        MySqlCommand create = new MySqlCommand(
-                            @"INSERT INTO Users (FullName, Email, Mobile, UPI_ID, Password, Balance)
-                          VALUES ('New User',
-                          IF(@v LIKE '%@%', @v, NULL),
-                          IF(@v REGEXP '^[0-9]+$', @v, NULL),
-                          IF(@v LIKE '%@%', @v, NULL),
-                          'upi_user',
-                          0)", con, transaction);
-
-                        create.Parameters.AddWithValue("@v", receiverInput);
-                        create.ExecuteNonQuery();
-
-                        receiverId = Convert.ToInt32(create.LastInsertedId);
+                        transaction.Rollback();
+                        Response.Write("<script>alert('Receiver not found. Please enter a valid Email, Mobile or Account Number.');</script>");
+                        return;
                     }
-                    else
-                    {
-                        receiverId = Convert.ToInt32(recObj);
-                    }
+
+                    int receiverId = Convert.ToInt32(recObj);
 
                     // 3. Check Sender Balance
                     MySqlCommand balCmd = new MySqlCommand(
